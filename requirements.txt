@@ -1,0 +1,6 @@
+fastapi
+pydantic
+typing
+SQLAlchemy
+sqlalchemy_utils
+uvicorn
