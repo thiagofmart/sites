@@ -8,6 +8,7 @@ from .database import Base
 class Post(Base):
     __tablename__="post"
     id = Column(Integer, primary_key=True)
+    subject = Column(String)
     title = Column(String)
     description = Column(String)
     content = Column(String)

@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from typing import List
 from datetime import datetime
 
 
@@ -7,16 +6,18 @@ class Topic(BaseModel):
     title: str
     content: str
 
-class PostIn(Topic):
-    subject: List[str]
+class PostCreate(Topic):
+    subject: list[str] #must be a list stringfied like '["topico1", "topico2", "topico3"]'
     description: str
-    topics: str #must be a list stringfy like '["topico1", "topico2", "topico3"]'
-
-class Post(Topic):
-    id: int
-    subject: List[str]
-    description: str
-    topics: List[Topic] #must be a list stringfy like '["topico1", "topico2", "topico3"]'
+    topics: list[Topic] #must be a list stringfied like '["topico1", "topico2", "topico3"]'
     author: str
+
+class PostUpdate(PostCreate):
+    id: int
+
+class Post(PostCreate):
+    id: int
     posted_at: datetime
-    updated_at: datetime
+    updated_at: datetime | None
+    class Config:
+        orm_mode=True
