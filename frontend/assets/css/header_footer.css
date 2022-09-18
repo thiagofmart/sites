@@ -17,7 +17,27 @@ header h2 {
   font-weight: 300;
   padding-top: 3px;
 }
-
+header ul {
+  float: left;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+}
+header li {
+  margin-top: 15px;
+  display: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+header a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: justify;
+}
+header a:hover {
+  color: blue;
+}
 footer {
   padding-top: 60px;
   padding-bottom: 40px;

@@ -1,17 +1,6 @@
 const SERVER = "http://127.0.0.1:8000";
 const subject = ["Filosofia", "Matemática", "string", "IoT", "Física", "Economia"]
 
-// verify if an obj is in array
-Array.prototype.contains = Array.prototype.contains || function(obj)
-{
-  var i, l = this.length;
-  for (i = 0; i < l; i++)
-  {
-    if (this[i] == obj) return true;
-  }
-  return false;
-};
-
 
 function get_posts () {
   const request = new XMLHttpRequest();
@@ -36,7 +25,7 @@ function renderPostsBoard(posts) {
     var posts_qtd = posts.length;
     for (var i1=0; i1<posts.length; i1++) {
 
-      if (posts[i1].subject.contains(subject[i0])) {
+      if (posts[i1].subject.includes(subject[i0])) {
         row+=`
         <div class="column">
           <article class="card">
@@ -54,7 +43,7 @@ function renderPostsBoard(posts) {
       }
     }
     postsBoard.innerHTML+=`
-    <h1 class="section-header blog">${subject[i0]}</h1>
+    <h1 id="${subject[i0]}" class="section-header blog">${subject[i0]}</h1>
     <div class="row">
       ${row}
     </div><br><hr>

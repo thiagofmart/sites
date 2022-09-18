@@ -26,6 +26,8 @@ main .column {
 }
 main .row {
   margin: 0 -5px;
+  flex-wrap: wrap;
+  display: flex;
 }
 main .row:after {
   content: "";
