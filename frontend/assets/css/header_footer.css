@@ -6,7 +6,11 @@ header {
   color: #FFF;
   position: relative;
 }
+header span {
+  float: left;
+}
 header h1 {
+  padding-left: 10px;
   font-weight: 500;
   text-transform: uppercase;
   max-width: 310px;
@@ -16,6 +20,7 @@ header h2 {
   float: right;
   font-weight: 300;
   padding-top: 3px;
+  padding-right: 25px
 }
 header ul {
   float: left;

@@ -44,8 +44,15 @@ async def update_post(db: sessionmaker, payload: schemas.PostUpdate):
     db_post['topics'] = _convert('str to list', db_post['topics'])
     return db_post
 
-def get_post_by_id(db: sessionmaker, id: int):
-    return db.query(models.Post).filter(models.Post.id==id).first()
+async def get_post_by_id(db: sessionmaker, id: int):
+    db_post = db.query(models.Post).filter(models.Post.id==id).first()
+
+    if db_post == None:
+        return None
+    db_post = db_post.__dict__
+    db_post['subject'] = _convert('str to list', db_post['subject'])
+    db_post['topics'] = _convert('str to list', db_post['topics'])
+    return db_post
 
 async def get_all_post(db: sessionmaker):
     db_posts = db.query(models.Post).all()

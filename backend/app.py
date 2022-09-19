@@ -32,3 +32,8 @@ async def update_post(payload: schemas.PostUpdate, db: sessionmaker=Depends(data
 async def get_posts(db: sessionmaker=Depends(database.get_db)):
     response = await crud.get_all_post(db=db)
     return response
+
+@app.get('/post/by_id/', response_model=schemas.Post|None)
+async def get_post_by_id(id: int|str, db: sessionmaker=Depends(database.get_db)):
+    response = await crud.get_post_by_id(db=db, id=id)
+    return response
