@@ -4,3 +4,4 @@ typing
 SQLAlchemy
 sqlalchemy_utils
 uvicorn
+aspose-words

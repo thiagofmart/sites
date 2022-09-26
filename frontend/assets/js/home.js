@@ -29,7 +29,7 @@ function renderPostsBoard(posts) {
         row+=`
         <div class="column">
           <article class="card">
-            <a href="./assets/posts/page.html">
+            <a href="./assets/posts/page.html#id=${posts[i1]['id']}.0">
               <div class="card-image">
                 <img src="./assets/images/Temp.png" alt="No Image FOUND">
               </div>
@@ -47,7 +47,7 @@ function renderPostsBoard(posts) {
     <div class="row">
       ${row}
     </div><br><hr>
-    `
+    `;
   }
 }
 //<p>Long descriptaion of the post that you want to show in the home page Long descriptaion of the post that you want to show in the home page Long descriptaion of the post that you want to show in the home page...</p>
